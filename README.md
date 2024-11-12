@@ -1,2 +1,2 @@
 # Github-Programming-projects
- All my programming projects so far
+This branch showcases a 2D game I have been working on in my spare time.

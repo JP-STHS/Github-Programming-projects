@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://edmghed2s8bx"]
+
+[ext_resource type="Texture2D" uid="uid://tasoqpr5tbbx" path="res://Assets/Home Menu background.png" id="1_ytg6q"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HomeMenuBackground" type="Sprite2D" parent="."]
+position = Vector2(596.25, 389.25)
+scale = Vector2(1.09766, 0.590909)
+texture = ExtResource("1_ytg6q")

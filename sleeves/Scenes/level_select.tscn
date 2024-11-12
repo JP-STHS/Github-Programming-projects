@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bd7xx2mu2tx"]
+
+[sub_resource type="Gradient" id="Gradient_wchrj"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.553859, 0.941653, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w5pn7"]
+gradient = SubResource("Gradient_wchrj")
+width = 69
+fill_from = Vector2(0.137615, 0.905032)
+fill_to = Vector2(1, 0.0296732)
+
+[node name="Level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.966
+offset_top = -5.0
+offset_right = 2.0
+offset_bottom = 38.032
+texture = SubResource("GradientTexture2D_w5pn7")
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 60.0
+offset_right = 309.0
+offset_bottom = 167.0

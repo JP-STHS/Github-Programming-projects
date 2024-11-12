@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://r1g6engvw2s4"]
+
+[ext_resource type="PackedScene" uid="uid://bedt4ifodbfdi" path="res://Main_menu/main_menu.tscn" id="1_tjtjp"]
+
+[node name="Main_Menu" instance=ExtResource("1_tjtjp")]
+
+[node name="VBoxContainer" parent="MarginContainer" index="0"]
+theme_override_constants/separation = 120
+
+[node name="Seperator" parent="MarginContainer/VBoxContainer" index="0"]
+script = null

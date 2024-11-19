@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://tasoqpr5tbbx" path="res://Assets/Home Menu background.png" id="1_pgoww"]
 [ext_resource type="Texture2D" uid="uid://cu2c548ubac6e" path="res://Assets/Sleeves_logo_image.png" id="2_oeh7s"]
-[ext_resource type="Script" path="res://Scripts/sleeve_logo_script.gd" id="3_0unb2"]
+[ext_resource type="Script" path="res://Scripts/Menu/sleeve_logo_script.gd" id="3_0unb2"]
 [ext_resource type="Texture2D" uid="uid://b7og33ik1li4" path="res://Textures/star_pixil-frame-0.png" id="4_euyy0"]
 [ext_resource type="Script" path="res://star_pixil_frame_0.gd" id="5_xavtf"]
-[ext_resource type="Script" path="res://Scripts/scene_loader.gd" id="6_60pqt"]
+[ext_resource type="Script" path="res://Scripts/Menu/scene_loader.gd" id="6_60pqt"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3

@@ -1,4 +1,4 @@
-# Github-Programming-projects
+# Python
 These are all my Python projects!
 
 

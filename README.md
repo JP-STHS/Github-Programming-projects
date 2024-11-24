@@ -1,2 +1,2 @@
-# Github-Programming-projects
- All my programming projects so far - change branches to see what I have done in different languages!
+# C++ Programs
+All the C++ programs I had to write for a college C++ class

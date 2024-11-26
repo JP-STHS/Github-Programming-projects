@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://edmghed2s8bx"]
+[gd_scene load_steps=3 format=3 uid="uid://edmghed2s8bx"]
 
-[ext_resource type="Texture2D" uid="uid://tasoqpr5tbbx" path="res://Assets/Home Menu background.png" id="1_ytg6q"]
+[ext_resource type="PackedScene" uid="uid://cx46kq0brmnm2" path="res://Scenes/Player/player.tscn" id="1_f4l4s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gf03"]
+size = Vector2(1073.5, 136)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="HomeMenuBackground" type="Sprite2D" parent="."]
-position = Vector2(596.25, 389.25)
-scale = Vector2(1.09766, 0.590909)
-texture = ExtResource("1_ytg6q")
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_f4l4s")]
+position = Vector2(254, 123)
+
+[node name="InvisibleFloor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleFloor"]
+position = Vector2(575.25, 285)
+shape = SubResource("RectangleShape2D_4gf03")

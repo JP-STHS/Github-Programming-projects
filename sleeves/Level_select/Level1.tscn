@@ -15,3 +15,5 @@ position = Vector2(254, 123)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleFloor"]
 position = Vector2(575.25, 285)
 shape = SubResource("RectangleShape2D_4gf03")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

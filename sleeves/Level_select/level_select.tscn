@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0bd7xx2mu2tx"]
 
-[ext_resource type="Script" path="res://Level_select/to_level_1.gd" id="1_lnx3l"]
+[ext_resource type="Script" path="res://Level_select/level_select.gd" id="1_40fnp"]
 
 [sub_resource type="Shader" id="Shader_10t8k"]
 code = "shader_type canvas_item;
@@ -60,8 +60,8 @@ offset_top = 60.0
 offset_right = 187.0
 offset_bottom = 167.0
 text = "Level 1"
-script = ExtResource("1_lnx3l")
 
 [node name="Level_select" type="Node" parent="."]
+script = ExtResource("1_40fnp")
 
-[connection signal="pressed" from="TextureRect/ToLevel1" to="TextureRect/ToLevel1" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/ToLevel1" to="Level_select" method="_on_to_level_1_pressed"]

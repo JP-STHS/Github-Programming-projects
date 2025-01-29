@@ -1,0 +1,28 @@
+//code inspired by Sample Code XYZ Grammar
+
++ sentence
+- {@noun phrase}{@verb phrase}
+
++ noun phrase
+- {@article}{@adjective}{@noun}
+- {@article}{@noun}
+
++ verb phrase
+- {@verb}{@adverb}
+- {@verb}
+
++ article
+- a\s
+- the\s 
++ adjective
+- large\s
+- hungry\s
++ noun
+- rabbit\s
+- mathematician\s
++ verb
+- eats\s
+- hops\s
++ adverb
+- quickly\s
+- wildly\s

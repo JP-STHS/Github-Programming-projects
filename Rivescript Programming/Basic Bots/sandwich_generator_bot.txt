@@ -1,0 +1,23 @@
+\\Starting symbol --> sandwich
+\\Terminal symbols --> bread
+\\Replacement rules:
+\\sandwich --> bread, sauce, condiments, meat, bread
+\\condiments --> cheese, condiments | cheese | vegetable
+\\sauce --> mustard | mayo
+\\meat --> meat, turkey | meat, chicken | meat, roast beef | turkey | chicken | roast beef
+\\vegetable --> tomato | lettuce
+
++sandwich
+- bread\s{@sauce}\s{@condiments}\s{@meat}\sbread
++condiments
+- cheese-slice {@condiments}
+- cheese-slice
+- {@vegetable}
++vegetable
+- tomato-slice
+- lettuce-leaf
++sauce
+-mustard
+-mayo
++meat
+-{random}turkey-slice {@meat}|chicken-slice {@meat}| roast beef-slice {@meat} | turkey-slice | chicken-slice | roast beef-slice{/random}

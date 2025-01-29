@@ -1,0 +1,36 @@
+//Starting symbol --> program
+//Terminal symbols --> a|b|c|...|z, 1|2|3|...|9, STRING
+//For replacement rules, refer to Appendix I - Lox language
+//Not all replacement rules will be used, just the ones pertaining to the specific LOX example I chose.
+//while (n > 6000) {return n;} eof
+
++run derivation
+- Ok!\n{@program}
++program
+-{@declaration} eof;
++declaration
+-{@statement}
++statement
+- while ({@comparison}) {@block}
++comparison
+- {@expression1} {@compsymbol} {@expression2}
++expression1
+-{@identifier}
++identifier
+-{@alpha}
++alpha
+-n
++compsymbol
+- >
++expression2
+-{@number}
++number
+-{@digit}
++digit
+-6000
++block
+-{@statement2}
++statement2
+-{@returnstmt}
++returnstmt
+-{return {@expression1};}

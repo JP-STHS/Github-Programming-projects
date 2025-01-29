@@ -1,0 +1,28 @@
+\\Starting symbol --> Name
+\\Terminal symbols --> a|b|c|...|z
+\\Replacement rules:
+\\Name --> First, Middle, Last
+\\First --> Capital, letter
+\\Last --> First
+\\Middle --> Capital
+\\Capital --> A|B|C|...|Z
+\\letter --> lowercase | lowercase, letter
+\\lowercase --> a|b|c|...|z
+
++name
+- {@first}\s{@middle}\s{@last}
++first
+- {@capital}{@letter}
++middle
+-{@capital}
++last
+-{@first}
+
+\\random function taken from class notes
++capital
+-{random}A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z{/random}
++letter
+-{@lowercase}
+-{@lowercase}{@letter}
++lowercase
+-{random}a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z{/random}

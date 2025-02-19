@@ -1,0 +1,53 @@
+! sub hi = hello
+! sub yo = hello
+! sub whats up = hello
+! sub jerk = bot
+! sub stupid = hate
+! sub dumb = hate
+! sub chatbot = bot
+! sub you = bot
+
++ [*] hello [*]
+-Why hello, what is your name?
++ *
+%why hello what is your name
+-<set name = <formal>> Hello <get name>!\n {@question}
++question
+- Got any hobbies?
+- How's your day coming along?
+- What's poppin?
++[*] (sport|sports) [*]
+- Whats the best one?
++[*] (nah|nope|no|dont know|don't know|idk) [*]
+- Oh come on, you have got to have some answer!
++sportoptions
+- hockey!
+- skiing!
++[*] (tennis|swimming|soccer|football) [*]
+- Cool! My favorite sport is {@sportoptions}
++[*] hate bot [*]
+- Can you please stop?
++[*] hate [*] bot
+- Well that's just rude! I'm done here!
+! sub hobby = like
++[*] like * [*]
+- Hey I like <star> too! How much do you spend on <star>?
++[*] spend [*] # [*]
+-<set amount = <star>> {@spending}
++spending
+* <get amount> <= 50 => Nice! Always keep your spending in check!
+* <get amount> > 50 => Whoa there, make sure your watching how much your losing!
++[*] day [*] going *
+- <set mood = <star>> {@moodchoices}
++moodchoices
+-Oh? So would you say today is a good or bad day so far?
+!sub great = good
+!sub awful = bad
++[*] (good|bad) [*]
+%oh so your day hasnt been going well
+* <star> == good => Great! Play any sports today?
+* <star> == bad => Aw, well I hope your day gets better.\n Got any hobbies?
++nothin much
+- ight, got any hobbies?
++*
+- Okay then. Anyways, what's your favorite sport?

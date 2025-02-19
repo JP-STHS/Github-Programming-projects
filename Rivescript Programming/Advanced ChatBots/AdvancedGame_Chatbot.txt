@@ -1,0 +1,141 @@
+//Main theme: Cafe bot. Sub themes: Flood escape, epic duck invasion
+//Substitution
+!sub hello =hi
+!sub yo = hi
+!sub wassup = hi
+!sub heyo = hi
+!sub howdy = hi
+!sub see ya = bye
+!sub ok = yes
+! sub okay = yes
+!sub sure = yes
+!sub alright = yes
+!sub yessir = yes
+!sub nah = no
+!sub nuh uh = no
+!sub no thanks = no
+//Pick a menu item
++ [*]hi[*]
+- Hello! Welcome to BloxDonalds!\n Our menu: \n1. Cheeseburger\n2. Sandwich\n3. Fried Chicken\n4. Beverage\n5. Ice Cream\n6. Cake Slice\n7. Muffin\n8. Secret\nWhat would you like from our cafe menu? <set survivedducks == 0> <set survivedflood == 0>
++[*](cheeseburger|sandwich|fried chicken|beverage|ice cream|cake slice|muffin|secret|1)[*]
+%*our cafe menu
+* <star> == cheeseburger => <set choice=cheeseburger> {@receipt}
+* <star> == 1 => <set choice=cheeseburger> {@receipt}
+* <star> == sandwich => <set choice=sandwich> {@receipt}
+* <star> == 2 => <set choice=sandwich> {@receipt}
+* <star> == fried chicken => <set choice=fried chicken> {@receipt}
+* <star> == 3 => <set choice=fried chicken> {@receipt}
+* <star> == beverage => <set choice=beverage> {@drinkchoice}
+* <star> == 4 => <set choice=beverage> {@drinkchoice}
+* <star> == ice cream => <set choice=ice cream> {@receipt}
+* <star> == 5 => <set choice=ice cream> {@receipt}
+* <star> == cake slice => <set choice=cake slice> {@receipt}
+* <star> == 6 => <set choice=cake slice> {@receipt}
+* <star> == muffin => <set choice=muffin> {@receipt}
+* <star> == 7 => <set choice=muffin> {@receipt}
+* <star> == 8 => <set choice=secret> {@mystery}
+* <star> == secret => <set choice=secret> {@mystery}
++*
+%*our cafe menu
+- Please pick an option we provide! {@question1}
++question1
+-\nWhat would you like from our cafe menu?
++receipt
+- \nAh, the <get choice>, right? It'll be out shortly at the counter. {@countermishap}
+- \nOk! Your <get choice> will be out shortly at the counter. {@countermishap}
++countermishap
+- {random} {@startflood} | {@startduck} {/random}
++drinkchoice
+-What kind of drink would you like?
++[*] *
+%*drink would you*
+- <set choice= <star>> {@receipt}
++mystery
+- ...Are you sure you want the mystery item...?
++[*]yes[*]
+%*the mystery*
+- Ok! Here you go!\n{@ohnoes}
++[*]no[*]
+%*the mystery*
+- ...bye then...
++ohnoes
+- *Pulls out gun* Your mystery item is... Death!!!\n Unfortunately you died from a gun.\nSay a greeting to try your luck once more.
++startflood
+-\n* * * * * The Narration Begins * * * * * *\nWhile waiting for your <get choice>, you feel a sudden tap. You can either:\n- Ignore the tap\n- Turn around
++[*]ignore[*]
+%*feel a sudden tap*
+- The tapping becomes slapping, but it seems you continue to not care. After a while it ceases, but by then it's too late. {@flooddeath}
++[*]turn around[*]
+%*feel a sudden tap*
+- \nYou turn around to see a goofy lookin fellow wearing sandals and a long black robe, his hair hidden by a large tin foil hat and his face donned by an RGB gaming mask. The strange man points towards the windows screaming, "THE FLOOD IS COMING!!!." Do you believe him?\nYes\nNo
++[*]yes[*]
+%*you believe him*
+- Your gut tells you to believe the weirdo and follow him. As soon as you accept the stranger's message, he hands you a letter before vanishing in a cloud of smoke. The other customers in the cafe give you the side-eye. Do you stay, or open the letter?
++[*]no[*]
+%*you believe him*
+- You assume the dude is crazy and continue to wait for your <get choice>. Unfortunately, the flood didn't wait for you. {@flooddeath}
++[*]stay[*]
+%*or open the*
+- Embarrassed by the encounter, you stay put. The flood doesn't though. {@flooddeath}
++[*]letter[*]
+%*or open the*
+-Although everyone is looking at you like you're nuts, you consider your life more important then their harsh glances. You quickly open the letter, and find an arrow pointing at the nearest pothole cover with an urgency symbol. Without thinking twice, you run outside and jump in the nearest pothole, closing the lid behind you. As you jump in, you hear the sounds of water gushing over the lid.\n\nYou survived the flood! {@survival} <set survivedflood = 1>
++flooddeath
+- \nYou died! The flood has mercilessly killed you.\nSay a greeting to try your luck once more.
++startflood2
+-\nThe duck invasion has exhausted you, but you're energetic enough to try and get your hard earned <get choice>. Right as you walk back into the cafe however, you feel a sudden tap behind you. You can either:\n- Ignore the tap\n- Turn around
++survival
+* survivedducks == 0 => {@startduck2}
+* survivedflood == 0 => {@startflood2}
+- {@winner}
++startduck
+-\n* * * * * The Narration Begins * * * * * *\nWhile waiting for your <get choice>, you feel an urge to use the restroom. You can either:\n- Use the toilet\n- Hold it in
++[*]toilet[*]
+%*urge to use the restroom*
+- You walk to the bathroom only to be shot dead in the temple! It looks like the ducks didn't like you for some reason.{@duckdeath}
++[*]hold[*]
+%*urge to use the restroom*
+- You decide to hold it in. Good choice! You notice the person next to you walk to the bathroom only to be suddenly shot in the chest.\n\nThat could have been 𝘆𝗼𝘂.\n\nThe cafe erupts in fear and you're given a choice:\n- Join the crowd in panicking\n- Check where the bullet came from
++[*]crowd[*]
+w%*where the bullet*
+- You decide to join the crowd in panicking. It doesn't really help though. The ducks invade the cafe armed with rifles and you become a tragic piece in history, as generations remember the innocent bystanders who died to the duck invasion of 2025.{@duckdeath}
++[*]bullet[*]
+w%*where the bullet*
+- As the crowd panics, you look at the direction from which the bullet came from. It seems to you like it came from the nearby docks, yet looking out the window, you don't see anything suspicious. Just a couple of ducks.\n You hear the TV in the main dining area on full blast and decide to see what is happening. \nA crowd gathers around the television screen as an emergency broadcast appears: <a href="https://imageproxy.ifunny.co/resize:640x,quality:90x75/images/de14b2e84b81af9d7d2c261981dc724c39cfffb61b86861243eda3897362e15a_3.jpg">The broadcasted message</a> \n\n - Enter anything to continue -
++*
+%*the broadcasted message*
+- Glancing outside, you notice the ducks by the docks again. This time though, you notice all the ducks armed with weaponry. It looks like they are done acting in secret. You notice a sword leaning next to the front door in the corner of your eye, but just across the street you see a bunker. You are given a choice:\n- Grab the sword\n- Go to the bunker
++[*]sword[*]
+%*across the street*
+-You grab the sword and charge at the ducks. You get a few good swings in but your sword shatters into pieces as the ducks use their advanced weaponry. You run to the bunker only to see that it has been sealed shut. You can:\n- Accept your fate\n- Fight to the death\n- Call for help.
++[*]bunker[*]
+%*across the street*
+- You run to the bunker only to see that it has been sealed shut. You can:\n- Accept your fate\n- Fight to the death\n- Call for help.
++[*]fate[*]
+%*has been sealed shut*
+- You accept the hopeless state you're in and give up. {@duckdeath}
++[*]death[*]
+%*has been sealed shut*
+- With bitter rage you dive into the swarm of ducks. The country honored the sacrifice you made.{@duckdeath}
++[*]help[*]
+%*has been sealed shut*
+- You see the ducks closing in. You scream for help and feel a light tug on your shoe. You look down and notice a small hole you didn't see previously next to the entrance to the bunker. Without hesitation you dive inside. The moment your soles enter the hole, you hear explosions, battle cries, gunfire and quacks. After a while the noise quiets down.\n\nEnter anything to continue.
++*
+%*after a while the noise*
+-You exit the hole and notice the building above you has been completely demolished, leaving only the small hole and bunker in-tact. You can hear a radio message being broadcasted that the ducks have been defeated. It looks like the government has taken care of the duck invasion. With relief, everyone around resumes life as if nothing happened.\n {@survival}\n\nYour survived the duck invasion! <set survivedducks = 1>
++startduck2
+-\nHopping out of the sewers you notice everything and everyone around you soaking wet. Nobody seems to care though. Amidst the flooded buildings, the Cafe looks untouched. It seems like the cafe was used to flooding considering the sea was less than a mile away. You walk back into the cafe to grab your <get choice>, but you feel an urge to use the restroom. Looks like being in a sewage drain for an hour has done a number on you. You can either:\n- Use the toilet\n- Hold it in
++duckdeath
+- \nYou died! The ducks have gruesomely killed you.\nSay a greeting to try your luck once more.
++winner
+-\nAfter dealing with a natural disaster and a terrorist attack, you walk back into the cafe a changed person. You endured all this trauma for a <get choice>. The cashier, acting as if nothing happened, brings you your <get choice>. After all the events of today, you feel satisfied knowing you can finally have a <get choice>. \nAs you stretch out your hand to grab your order, the cashier stops you midway and utters three words you could have never anticipated, "Cash or Credit?"\n Realizing you forgot your wallet you have been given one final choice:\n- Go home\n- Don't pay
+[*]home[*]
+%*one final*
+-You go home defeated. Just another Tuesday for you though.\\nn* * * * * * * * The Unfortunate End * * * * * * * * 
+[*]dont[pay][*]
+%*one final*
+-You snatch your <get choice> out of the cashier's hands and leave. You glance back and notice the cashier couldn't care less. You sit down outside, kick your feet up, and consume your <get choice>, reflecting on the truly bizarre day you've had so far.\n\n* * * * * * * * The End * * * * * * * *
+//catch all
++*
+- Hmmm... not sure what you mean... Try greeting me!
+

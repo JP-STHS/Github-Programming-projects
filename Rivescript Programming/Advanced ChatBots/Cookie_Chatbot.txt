@@ -1,0 +1,40 @@
++hi
+-Hello! Do you want a cookie?
++[*]yes
+%*want a cookie
+- Ok! Which cookie do you want? We have:\nMacadamia nut, Chocolate chip, Catmeal raisin, m&m, Sugar cookie, Chips ahoy, Oreo, and Peanut butter.
++[*](macadamia nut|chocolate chip|oatmeal raisin|m and m|sugar cookie|chips ahoy|oreo|peanut butter)[*]
+%*and peanut butter
+* <star> == macadamia nut => Ooh, that's a good one.\n {@highrating} {@evaluation}
+* <star> == chocolate chip => Ah, the classic.\n {@highrating} {@evaluation}
+* <star> == oatmeal raisin => Hoho, a favorite of mine.\n {@highrating} {@evaluation}
+* <star> == m and m => Yea this one's 'aight.\n {@midrating} {@evaluation}
+* <star> == sugar cookie => This one is straight heat. {@highrating} {@evaluation}
+* <star> == chips ahoy => Ehhh sometimes these hit.\n {@midrating} {@evaluation}
+* <star> == oreo => Yet another classic!\n {@highrating} {@evaluation}
+* <star> == peanut butter => Ew, you need help.\n {@lowrating} {@evaluation}
+- Pick an actual cookie please!
++[*]no
+%*want a cookie
+- BUZZ OFF THEN
+
++highrating
+- {random}<set rating = 8>|<set rating = 9>|<set rating = 10>{/random}
++midrating
+- {random}<set rating = 5>|<set rating = 6>|<set rating = 7>{/random}
++lowrating
+-{random}<set rating = 1>|<set rating = 2>|<set rating = 3>|<set rating = 4>{/random}
++evaluation
+- I would rate your cookie a <get rating>/10.\n {@checker}{@weightedstatement}
++checker
+* <get rating> > 7 => Looks like your cookie is... pretty good!\n
+* <get rating> > 3 => Looks like your cookie is... pretty mid...\n
+* <get rating> < 4 => Looks like your cookie... oh yuck your cookie sucks!\n
++weightedstatement
+- If you want me to evaluate another cookie, say "hi"! {weight=90}
+- If you don't want me to evaluate another cookie, don't say "hi"! {weight=15}
+- 🍪<--COOKIE {weight=1}
+
+
++*
+-hmmm... try saying hi...

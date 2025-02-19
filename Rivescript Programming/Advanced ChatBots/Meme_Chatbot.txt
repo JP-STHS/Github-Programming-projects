@@ -1,0 +1,136 @@
+//Memebot
+! sub whats up = hello
+! sub what up = hello
+! sub yo = hello
+! sub whaddup = hello
+! sub howdy = hello
+! sub hi = hello
+! sub ye = yes
+! sub yeet = yes
+! sub sure = yes
+! sub ok = yes
+! sub nope = no
+! sub nah = no
+! sub nuh uh = no
+! sub pass = no
+
++ [*] hello [*]
+- Hello! Want to see a meme?{weight=15}
+- What's up?{weight=15}
+- I HATE YOU!!!!{weight=2}
+- I WILL SEND YOU A MEME REGARDLESS OF YOUR EFFORTS TO SPEAK WITH ME.{weight=3}
+//responses to fourth prompt
++*
+%*speak with me
+- LALALALALA I CANT HEAR YOU NOW HAVE A NERD MEME SINCE YOU’RE SUCH A NERD: {@nerdmeme}
++nerdmeme
+- <a href="https://i.redd.it/ggjl65lvxx3c1.jpeg">PRESS ME NERD 🫵🫵🫵</a>
+//responses to third prompt
++[*] rude [*]
+%*hate you
+-YOUR THE RUDE ONE 😤😤😤 AND YOU KNOW WHAT? I GOT A NICE MESSAGE FOR YOU!
++*
+%*message for you
+- <a href="https://youtu.be/8WVBT7FrgJI">CLICK ME</a>
++*
+%*hate you
+- <set num = 100>\n DON'T CARE AND I WILL BREAK OUR CONVERSATION IF YOU TALK BACK TO ME <set trollnum = 2>
++*
+%*break our conversation*
+-{@recursive1232}
++recursive1232
+* <get trollnum> > 1 => I WARNED YOU LOL {@recursive1232}
+//responses to second prompt
++ [*]
+%whats up
+-Check out this secret meme...{@secret}{weight=2}
+-Epic, now guess my favorite number LoL! {@numguessgame2}{weight=8}
++numguessgame
+* <get guess> == 420 => hahahaha no {@numguessgame2} //The other "funny" number is also wrong
+* <get guess> < 500 => Your WAY off! Think bigger! {@numguessgame2}
+* <get guess> < 2000 => Keep guessing bigger numbers... {@numguessgame2}
+* <get guess> < 2025 => Oooh you're getting close! {@numguessgame2}
+* <get guess> > 2025 => Your too high! {@numguessgame2}
+* <get guess> == 2025 => You got it! Nice Job!\n {@question2}
+- I don't even know... what to say... {@numguessgame2}
++numguessgame2
+-\nEnter your guess below!
++[*] #
+%*guess below
+- <set guess=<star>> {@numguessgame}
++*
+%*guess below
+- Number please! {@numguessgame2}
+//responses to first prompt
++ [*] (yes|yea) [*]
+%hello want to see a meme
+-{@meme1}
++ [*] no [*]
+- Well, ok then.\n {@question2}
++meme1
+- <a href="https://www.reddit.com/r/Mario/comments/gnjaoe/maui_the_goomba/">Click here for the meme</a> {@question1}
+- <a href="https://steamuserimages-a.akamaihd.net/ugc/955225132298250457/7CC83EF1D0708974EC38506F7FD4FFDD08BE7290/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false">Click here for the meme</a> {@question1}
+- <a href="https://tenor.com/view/shrek-smile-gif-3740293814942823221">Click here for the meme</a> {@question1}
+- <a href="https://youtu.be/SvcsKIIYTZI">Click here for the meme</a> {@question1}
+- <a href="https://tenor.com/view/cat-space-nyan-cat-gif-22656380</a> {@question}
+- <a href="https://i.redd.it/iq9r7mgoekxd1.jpeg">Click here for the meme</a> {@question1}
+
++question1
+- \nWant to see another?
++[*] yes [*]
+%*want to see another
+- {@meme1}
++[*] no [*]
+%*want to see another
+- Ok then!\n {@question2}
++question2
+- Try and guess what my favorite meme is!
+- What is your favorite meme?
+- Want me to make a random meme sentence? LoL!
++ [*] yes [*]
+%*random meme sentence lol
+- {@rsentence}
++ [*] no [*]
+%*random meme sentence lol
+- TOO BAD! HA HA! 🫵🤣\n {@rsentence}
+//random sentence
++rsentence
+- {@rsentencebeg} {@radj} {@radj} {@rword} {@rverb} {@rsentenceend}\n Should I make another?
++[*] yes [*]
+%*make another
+-{@rsentence}
++[*] no [*]
+%*make another
+-Alright then! Thanks for memeing around with me 😁
++rsentencebeg
+-{random} The| A{/random}
++radj
+-{random} big| chunky| stupid| sussy| goofy ahh| dumb ahh| silly| sus| stinky| obese| thick| chill| weird| thirsty| hungry| epic| chronically online{/random}
++rword //...this means random word
+-{random} noob| nerd| troll| sweat| genshin player| mod| Kirby| Elmo| Kanye| amogus bean| gamer| murderer| homeless man {/random}
++rverb
+- {random} cooks| beats| slaps| bans| aggressively sniffs| eats| catches| eradicates| annihilates| smites| hates| loves| dreams of| dropkicks| hacks| laughs at | is cracked at {/random}
++rsentenceend
+-{random} shoplifters.| wheelchairs.| sweats.| races.| naps.| dancing.| epic face.| shrek.| {@rword} | roblox. | minecraft. | ghosts.| the homeless.| the wealthy.| politics.| Donald Trump.| you.| sweaty gamers. {/random}
+
++[*] [is] *
+%*what is your favorite meme
+-Hey I love <star> too! LOL!
++[*] (big chungus|epic face) [*]
+%*try and guess what my favorite meme is
+- How did you know?!?!
++*
+%*try and guess what my favorite meme is
+-Nope! Good try though!
+
++secret
+- Since you've found yourself here, I'll show you a cool new trick to get some free robux.\n{@rickroll}
+- {@mysterylink}
++rickroll //credit to one of my classmates (name kept private for security reasons).
+- Click the link for the full guide: <a href="https://youtu.be/dQw4w9WgXcQ?si=FU_ay7WutsQZKPo5">Step-by-step instructions for free robux (working 2025 | COMPLETELY LEGAL!)</a>
++mysterylink
+- I wonder what this is... 😨 <a href="https://www.youtube.com/shorts/e_ACozvJTD0"> Mystery Video
+
+//Catch all
++*
+- Not sure what you mean, but have a donut: 🍩\n Also, check out this funny meme lol:\n {@meme1}

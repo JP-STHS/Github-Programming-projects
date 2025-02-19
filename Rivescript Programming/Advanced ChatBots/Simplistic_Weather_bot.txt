@@ -1,0 +1,39 @@
+//simple weather bot
+!var hot = 80°F
+!var warm = 30°F
+!var cold = -10°F
+!var frostbite = -100°F
+!var boiling = 120°F
+!var pretemp = 0
+
++[*] (hi|hello|sup|yo) [*]
+- Hello! what is your name?
++[*] name is *
+%*your name
+- <set name = <formal>> Hello <get name>!\n Would you like to know the weather today?
++*
+%*your name
+- Try saying "___ name is ___" next time.
++ (ye|yea|yes|sure|ok|okay)
+%*weather today
+- Today the temperature is {@temp}
++temp
+- {random} <set temp2 = <bot hot>> {@sohot} | <set temp2 = <bot cold>> {@socold}| <set temp2 = <bot warm>> {@niceweat} | <set temp2 = <bot frostbite>> {@socold}| <set temp2 = <bot boiling>> {@sohot} {/random}
++ (no|nuh uh|no thanks|nah)
+%*weather today
+- Fine then! Hope it's {random} <bot boiling> | <bot frostbite> {/random} for you!  ╰（‵□′）╯
++niceweat
+- <get temp2>. Nice! Wanna check again?
++socold
+-<get temp2>\n Wow, it sure is cold huh? Wanna check again? 
++sohot
+-<get temp2>\n Owch! Wanna check again?
++[*](ye|yea|yes|sure|ok|okay)
+%*check again
+- Okay! The previous temp was <get temp2>, the current temp is {@temp}
++[*] (no|nuh uh|no thanks|nah)
+%*check again
+- Okay then, see ya!
+
++*
+-Hmm not sure what you mean. Do you want to try greeting me?

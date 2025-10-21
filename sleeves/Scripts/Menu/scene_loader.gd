@@ -1,6 +1,5 @@
 extends Node
 
 
-
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Level_select/level_select.tscn")
+	Transition.start_transition("res://Scenes/Level_select/level_select.tscn")

@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://r1g6engvw2s4"]
+[gd_scene load_steps=10 format=3 uid="uid://r1g6engvw2s4"]
 
 [ext_resource type="Texture2D" uid="uid://tasoqpr5tbbx" path="res://Assets/Home Menu background.png" id="1_fly1p"]
 [ext_resource type="Texture2D" uid="uid://cu2c548ubac6e" path="res://Assets/Sleeves_logo_image.png" id="2_tpjo2"]
-[ext_resource type="Script" path="res://Scenes/sleeves_logo_image.gd" id="3_rqd5v"]
+[ext_resource type="Script" path="res://Scripts/Menu/sleeve_logo_script.gd" id="3_u00bx"]
 [ext_resource type="Texture2D" uid="uid://b7og33ik1li4" path="res://Textures/star_pixil-frame-0.png" id="4_1psec"]
 [ext_resource type="Script" path="res://star_pixil_frame_0.gd" id="5_aunob"]
 [ext_resource type="Script" path="res://Scripts/Menu/scene_loader.gd" id="6_0nlcq"]
+[ext_resource type="Script" path="res://Scenes/point_light_2d.gd" id="6_aheo6"]
 
 [sub_resource type="Gradient" id="Gradient_4tw67"]
 offsets = PackedFloat32Array(0.311688, 0.551948)
@@ -15,7 +16,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_4tw67")
 fill = 1
 fill_from = Vector2(0.486239, 0.46789)
-fill_to = Vector2(0.733945, 0.165138)
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -30,13 +30,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -4.0
-offset_right = 846.0
-offset_bottom = 348.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.653179, 0.653179)
 texture = ExtResource("1_fly1p")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -58,21 +53,17 @@ theme_override_constants/separation = 120
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="SleevesLogoImage" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+[node name="SleevesLogoImage" type="Sprite2D" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("timer")]
 top_level = true
 visibility_layer = 8
 position = Vector2(549, 310)
 scale = Vector2(0.0670813, 0.0646281)
 texture = ExtResource("2_tpjo2")
-script = ExtResource("3_rqd5v")
+script = ExtResource("3_u00bx")
+scale_factor = 0.1
+timer = NodePath("Grow")
 
-[node name="SleevesLogoImage3" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-visible = false
-top_level = true
-visibility_layer = 8
-position = Vector2(549, 310)
-scale = Vector2(0.087, 0.085)
-texture = ExtResource("2_tpjo2")
+[node name="Grow" type="Timer" parent="MarginContainer/VBoxContainer/SleevesLogoImage"]
 
 [node name="StarPixil-frame-0" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
 position = Vector2(93.875, 321.5)
@@ -213,82 +204,13 @@ scale = Vector2(0.035825, 0.0345)
 texture = ExtResource("4_1psec")
 script = ExtResource("5_aunob")
 
-[node name="mypoint2" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(132, 384)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 1.21
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint4" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(251, 259)
-scale = Vector2(0.88413, 0.814893)
+[node name="PointLight2D" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(90, 260)
+scale = Vector2(0.993331, 0.887125)
 color = Color(0.552137, 0.688411, 1.92523e-07, 1)
 energy = 0.92
 texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint12" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(652, 145)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 0.92
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint17" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(433, 94)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 0.92
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint13" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(748, 57)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 0.92
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint14" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(896, 77)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 0.92
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint15" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(65.9999, 88)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 0.92
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint16" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(1035, 128)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 1.5
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint18" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(1087, 317)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 0.92
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint19" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(967, 365)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 2.53
-texture = SubResource("GradientTexture2D_5i65k")
-
-[node name="mypoint20" type="PointLight2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(844, 406)
-scale = Vector2(0.88413, 0.814893)
-color = Color(0.552137, 0.688411, 1.92523e-07, 1)
-energy = 2.07
-texture = SubResource("GradientTexture2D_5i65k")
+script = ExtResource("6_aheo6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer"]
 
@@ -318,7 +240,5 @@ text = "Credits"
 [node name="Scene_Loader" type="Node" parent="."]
 script = ExtResource("6_0nlcq")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
-
+[connection signal="timeout" from="MarginContainer/VBoxContainer/SleevesLogoImage/Grow" to="MarginContainer/VBoxContainer/SleevesLogoImage" method="_on_grow_timeout"]
 [connection signal="pressed" from="MarginContainer/CanvasLayer/Start_button" to="Scene_Loader" method="_on_start_button_pressed"]

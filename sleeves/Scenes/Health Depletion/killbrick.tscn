@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://iijpmygc2ov0"]
+
+[ext_resource type="Script" path="res://components/hitbox.gd" id="1_r50dw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vdoi"]
+size = Vector2(1112, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qid3l"]
+size = Vector2(1162, 162)
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(463, -19)
+shape = SubResource("RectangleShape2D_6vdoi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 0
+script = ExtResource("1_r50dw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(477, -26)
+shape = SubResource("RectangleShape2D_qid3l")

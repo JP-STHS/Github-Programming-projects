@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0bd7xx2mu2tx"]
 
-[ext_resource type="Script" path="res://Level_select/level_select.gd" id="1_40fnp"]
+[ext_resource type="Script" path="res://Scenes/Level_select/level_select.gd" id="1_40fnp"]
 
 [sub_resource type="Shader" id="Shader_10t8k"]
 code = "shader_type canvas_item;
@@ -49,8 +49,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.966
 offset_top = -5.0
-offset_right = 2.0
-offset_bottom = 38.032
+offset_bottom = 17.032
 texture = SubResource("GradientTexture2D_w5pn7")
 
 [node name="ToLevel1" type="Button" parent="TextureRect"]

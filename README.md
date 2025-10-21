@@ -1,2 +1,2 @@
 # Github-Programming-projects
- All my programming projects so far - Change branches to see what I have done in different languages!
+Some of my programming projects - Change branches to see some things I have done in different languages!
